@@ -12,18 +12,17 @@
     </a-layout-content>
   </a-layout>
 </template>
-<script setup lang="ts">
+<script setup>
 import { reactive, h, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { HomeOutlined, BlockOutlined, SettingOutlined } from '@ant-design/icons-vue'
-import type { ItemType } from 'ant-design-vue'
 const data = reactive({
   collapsed: false,
   selectedKeys: ['/home'],
   openKeys: [],
 })
 
-const items: ItemType[] = reactive([
+const items = reactive([
   { label: '首页', key: '/home', icon: () => h(HomeOutlined), path: '/home' },
   {
     label: '典型页面',
@@ -34,11 +33,11 @@ const items: ItemType[] = reactive([
 ])
 const router = useRouter()
 // 点击跳转页面
-const gotoPage = (e: any) => {
+const gotoPage = (e) => {
   router.push(e.item.path)
 }
 // 获取父级key
-const getParentKey = (key: string) => {
+const getParentKey = (key) => {
   for (const item of items) {
     if (item.children) {
       for (const child of item.children) {
