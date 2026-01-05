@@ -10,7 +10,7 @@
 import EditTagsDialog from './components/EditTagsDialog.vue'
 import { ref } from 'vue'
 
-const editTagRef = ref(null)
+const editTagRef = ref<InstanceType<typeof EditTagsDialog> | null>(null)
 const showTag = () => {
   if (editTagRef.value) {
     editTagRef.value.showDialog()
