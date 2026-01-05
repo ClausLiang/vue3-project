@@ -65,5 +65,8 @@ watch(
 <style scoped lang="less">
 .ant-layout {
   height: 100vh;
+  .ant-layout-content {
+    padding: 16px;
+  }
 }
 </style>
