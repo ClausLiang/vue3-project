@@ -14,9 +14,9 @@ const router = createRouter({
           component: () => import('@/views/home/HomeView.vue'),
         },
         {
-          path: '/about',
-          name: 'about',
-          component: () => import('@/views/about/AboutView.vue'),
+          path: '/variableTextArea',
+          name: 'variableTextArea',
+          component: () => import('@/views/variableTextArea/VariableTextAreaDemo.vue'),
         },
       ],
     },

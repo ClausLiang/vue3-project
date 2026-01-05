@@ -30,7 +30,7 @@ const items: ItemType[] = reactive([
     label: '典型页面',
     key: 'pages',
     icon: () => h(BlockOutlined),
-    children: [{ label: '关于', key: '/about', path: '/about' }],
+    children: [{ label: '可插入变量输入框', key: '/variableTextArea', path: '/variableTextArea' }],
   },
 ])
 const router = useRouter()
@@ -54,10 +54,10 @@ const getParentKey = (key: string) => {
 const route = useRoute()
 // 监听路由选中及展开菜单
 watch(
-  () => route,
+  () => route.path,
   (newVal) => {
-    data.selectedKeys = [newVal.path]
-    data.openKeys = getParentKey(newVal.path)
+    data.selectedKeys = [newVal]
+    data.openKeys = getParentKey(newVal)
   },
   { immediate: true }
 )
